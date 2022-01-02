@@ -21,6 +21,23 @@ public class Main {
 		Melon melon7 = new Melon(melonTypes[3],7,10,3,"Sheila");
 
 		Melon[] melons ={melon1,melon2,melon3,melon4,melon5,melon6,melon7};
+
+
+
+		getSellabilityReport(melons);
+	}
+
+	public static void getSellabilityReport(Melon[] melons) {
+		for (Melon melon : melons) {
+			String canIt;
+			if (melon.isSellable()) {
+				canIt = "CAN BE SOLD";
+			} else {
+				canIt = "NOT SELLABLE";
+			}
+			System.out.printf("Harvested by %s from Field %d (%s)\n", melon.harvester, melon.field, canIt);
+
+		}
 	}
 
 }
